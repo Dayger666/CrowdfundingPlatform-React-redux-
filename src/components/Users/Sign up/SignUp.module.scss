@@ -1,0 +1,96 @@
+.SignUpForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    background-color: white;
+    margin-top: 50px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    border: 0.1px solid #808080;
+    width: 400px;
+    height: 570px;
+    flex-direction: column;
+
+    .form {
+
+        & h3 {
+            font-size: 28px;
+            font-weight: 600;
+            text-align: left;
+            width: 200px;
+            padding-left: 20px;
+            padding-top: 20px;
+            color: #353536;
+            float: left;
+        }
+
+        .field {
+            width: 100%;
+            margin: 20px 130px 10px 0px;
+            box-sizing: border-box;
+            padding: 12px;
+            font-size: 15px;
+            line-height: 17px;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        .sendBtn {
+
+            font-size: 14px;
+            font-weight: 700;
+            background: #27aae1;
+            border: 1px solid #27aae1;
+            border-radius: 4px;
+            box-shadow: 0 0 5px 0 rgba(0, 0, 0, .2);
+            color: #fff;
+            padding: 12px 120px;
+            margin-bottom: 0;
+            margin-top: 30px;
+            cursor: pointer;
+        }
+    
+
+    .separate {
+        padding-bottom: 40px;
+        border-bottom: 1px solid #DEDEDF;
+        width: 100%;
+       
+    }
+}
+    .googleBtn{
+        font-size: 14px;
+        font-weight: 700;
+        background: red;
+        border: 1px solid red;
+        border-radius: 4px;
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, .2);
+        color: #fff;
+        padding: 12px 100px;
+        margin-bottom: 0;
+        margin-top: 20px;
+        cursor: pointer;
+        & img{
+            margin-left: 15px;
+            width:25px;
+        }
+    }
+    .facebookBtn{
+        font-size: 14px;
+        font-weight: 700;
+        background: #3b5998;
+        border: 1px solid #3b5998;
+        border-radius: 4px;
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, .2);
+        color: #fff;
+        padding: 12px 93px;
+        margin-bottom: 0;
+        margin-top: 20px;
+        cursor: pointer;
+        & img{
+            margin-left: 15px;
+            width:25px;
+        }
+    }
+
+}

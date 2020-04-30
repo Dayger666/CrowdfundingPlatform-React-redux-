@@ -1,0 +1,97 @@
+.header {
+  grid-area: h;
+}
+
+.header a {
+  color: #363636;
+}
+
+.header a:link {
+  text-decoration: none;
+}
+
+.header .navWrapper {
+  background-color: white;
+  border-bottom: 1px solid #b1b1b1;
+  opacity: 1;
+  width: 100%;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  height: 80px;
+  padding: 26px 0;
+}
+
+.header .navWrapper img {
+  margin-left: 200px;
+  margin-right: 50px;
+  width: 210px;
+  height: 55px;
+}
+
+.links {
+  color: #363636;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.link {
+  margin-left: 70px;
+  cursor: pointer;
+}
+
+.link:hover {
+  color: #363636;
+  border-bottom: 3px solid #27aae1;
+}
+
+.loginBlock {
+  margin-left: 500px;
+}
+
+.loginBlock .dropdown {
+  width: 50px;
+}
+
+.loginBlock .dropdown .userIcon {
+  margin: 0 0px 0 0;
+  width: 50px;
+}
+
+.loginBtn {
+  color: #363636;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 11px 30px;
+  background: white;
+  cursor: pointer;
+}
+
+.loginBtn:hover {
+  color: #27aae1;
+}
+
+.signupBtn {
+  margin-left: 15px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #27aae1;
+  padding: 15px 20px;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  outline: none;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+}
+
+/*# sourceMappingURL=Header.module.css.map */

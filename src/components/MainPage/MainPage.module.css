@@ -1,0 +1,60 @@
+.mainWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  margin: 0px 0px 20px 0px;
+}
+
+.mainWrapper img {
+  width: 100%;
+  height: 530px;
+}
+
+.mainWrapper .content {
+  margin: 20px 0px 20px 0px;
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+.mainWrapper .content .category {
+  width: 100%;
+}
+
+.mainWrapper .content .selectors {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mainWrapper .content .selectors .searchForm input {
+  background: 0 0;
+  border: 1px solid #b1b1b1;
+  border-width: 0 0 1px;
+  font-size: 14px;
+  color: #777;
+  width: 250px;
+  padding: 20px 10px 4px 20px;
+  outline: none;
+}
+
+.mainWrapper .content .selectors .searchForm:before {
+  font-family: FontAwesome;
+  content: "\f002";
+}
+
+.mainWrapper .content .selectors .sortedForm {
+  padding: 15px 0px 4px 20px;
+  width: 250px;
+}
+/*# sourceMappingURL=MainPage.module.css.map */

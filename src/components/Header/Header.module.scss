@@ -1,0 +1,101 @@
+.header {
+    grid-area: h;
+    //  background: url(../../assets/images/crowdfundingBanner6.png) no-repeat;
+    //  background-size:100% 670px;
+    a{
+        color: #363636;
+    }
+    a:link{
+        text-decoration: none;  
+        
+    }
+    .navWrapper {
+        background-color: rgb(255, 255, 255);
+        border-bottom: 1px solid #b1b1b1;
+        opacity: 1;
+        width:100%;
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        height: 80px;
+        padding: 26px 0;
+        & img {
+            margin-left: 200px;
+            margin-right: 50px;
+            width: 210px;
+            height: 55px;
+
+        }
+    }
+}
+
+.links {
+    color: #363636;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.link {
+    margin-left: 70px;
+    cursor: pointer;
+   
+    &:hover{
+        color: #363636;
+        border-bottom: 3px solid #27aae1;
+    }
+}
+
+
+.loginBlock {
+    margin-left: 500px;
+    .dropdown{
+        width:50px;
+        // & button{
+        //     background-color: #27aae1 !important;
+        //     box-shadow:none !important;
+        //     border-style:none !important;
+        //   }
+        //   & button:focus{
+        //     background-color: #27aae1 !important;
+        //     border-style:none !important;
+        //     box-shadow:none !important;
+        //   }
+        //   .dropdown-menu show dropdown-menu-right{
+        //     background-color: #27aae1 !important;
+        //   }
+        
+    .userIcon{
+        margin: 0 0px 0 0;
+        width:50px;
+    }
+}
+
+}
+
+.loginBtn {
+    color: #363636;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 11px 30px;
+    background: white;
+    cursor: pointer;
+    &:hover{
+        color: #27aae1;
+    }
+}
+
+.signupBtn {
+    margin-left: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    background: #27aae1;
+    padding: 15px 20px;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    outline: none;
+    border-radius: 4px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, .2);
+    text-transform: uppercase;
+}

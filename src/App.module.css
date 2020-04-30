@@ -1,0 +1,18 @@
+.appWrapper {
+  display: -ms-grid;
+  display: grid;
+  margin: 0 auto;
+      grid-template-areas: "h h h"  "c c c";
+  -ms-grid-rows: 80px 1fr;
+      grid-template-rows: 80px 1fr;
+  -ms-grid-columns: 0fr 13fr 2fr;
+      grid-template-columns: 0fr 13fr 2fr;
+}
+
+.content {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: c;
+}
+/*# sourceMappingURL=App.module.css.map */
