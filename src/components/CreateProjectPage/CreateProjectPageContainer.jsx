@@ -4,12 +4,14 @@ import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 
 let CreateProjectPageContainer = (props) => {
-    if (!props.isAuth) {
+    if (!props.userName) {
         return <Redirect to={'/login'} />
       }
+    const onSubmit = (formData) => {
 
-    return <CreateProjectPage />
-}
+    };
+    return <CreateProjectPage  onSubmit={onSubmit}/>
+};
 
 let mapStateToProps = (state) => {
     return {

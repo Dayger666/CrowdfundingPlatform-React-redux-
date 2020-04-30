@@ -123,19 +123,19 @@ export let initializeApp = () => {
 export let oauthGoogleThunkCreator = (accessToken) => {
     return (dispatch) => {
         authAPI.googleOauth(accessToken).then((res) => {
-    
-             dispatch(setIsAuth(true));
+
+            dispatch(setIsAuth(true));
             dispatch(setUserData(res.data.email, res.data.userName, res.data.userId));
-             localStorage.setItem("token", res.data.token);
+            localStorage.setItem("token", res.data.token);
         })
     }
 };
 export let oauthFacebookThunkCreator = (accessToken) => {
     return (dispatch) => {
         authAPI.facebookOauth(accessToken).then((res) => {
-             dispatch(setIsAuth(true));
-             dispatch(setUserData(res.data.email, res.data.userName, res.data.userId));
-             localStorage.setItem("token", res.data.token);
+            dispatch(setIsAuth(true));
+            dispatch(setUserData(res.data.email, res.data.userName, res.data.userId));
+            localStorage.setItem("token", res.data.token);
         })
     }
 };

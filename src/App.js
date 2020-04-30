@@ -29,7 +29,7 @@ let App=(props)=>{
       </div>
     </div>
   );
-}
+};
 
 const mapStateToProps=(state)=>{
   return{
