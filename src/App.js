@@ -8,7 +8,7 @@ import LoginContainer from './components/Users/Log in/Login'
 import CreateProjectPageContainer from './components/CreateProjectPage/CreateProjectPageContainer'
 import {compose} from "redux";
 import {connect} from "react-redux";
-import  { useState, useEffect } from 'react';
+import  {  useEffect } from 'react';
 import {  initializeApp } from "././redux/Auth-reducer";
 
 let App=(props)=>{
