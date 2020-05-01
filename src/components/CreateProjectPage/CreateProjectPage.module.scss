@@ -1,5 +1,6 @@
-%inputFieldSize{
-  width: 100%;
+@mixin inputFieldSize($h,$w:100%) {
+  width: $w;
+  height: $h;
   padding: 0 11px;
   color: #333333;
   border: 1px solid #cccccc;
@@ -9,43 +10,294 @@
   line-height: 1;
 }
 
+@mixin inputBoxSize($h,$w:620px) {
+  margin-top: 11px;
+  padding: 15px 19px 15px 10px;
+  width: $w;
+  height: $h;
+  border-top: 5px solid transparent;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+%h3Size {
+  padding-bottom: 10px;
+  color: #363636;
+  font-size: 20px;
+  font-weight: 600;
+}
+
 .createProjectForm {
   display: flex;
   justify-content: center;
-  align-items: center;
-  align-content: center;
+
   flex-direction: row;
-    .generalInformation{
+
+  & h3 {
+    @extend %h3Size;
+  }
+
+  .generalInformation {
+    display: flex;
+    flex-direction: column;
+
+    .nameInputField {
+      @include inputBoxSize(120px);
+
+      .field {
+        @include inputFieldSize(36px);
+      }
+    }
+
+    .descriptionInputField {
+      @include inputBoxSize(200px);
+
+      .field {
+        @include inputFieldSize(110px);
+      }
+    }
+
+    .categoryField {
+      @include inputBoxSize(120px);
+
+      .field {
+        @include inputFieldSize(36px);
+
+      }
+    }
+
+    .locationInputField {
+      @include inputBoxSize(120px);
+
+      .field {
+        @include inputFieldSize(36px);
+
+      }
+    }
+
+    .coverAndVideo {
+      margin-top: 11px;
+      width: 620px;
+      height: 680px;
+      border-top: 5px solid transparent;
+      border-radius: 5px;
+      background-color: #ffffff;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
       display: flex;
       flex-direction: column;
-      .nameInputField{
-        padding: 15px 19px 15px;
-      width:620px;
-        height: 130px;
-        border-top: 5px solid transparent;
-        -moz-border-radius: 5px;
-        border-radius: 5px;
-        background-color: #ffffff;
-        -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-        & h3{
-          padding-bottom: 10px;
-          color: #363636;
-          font-size: 20px;
-          font-weight: 600;
-        }
-        .field{
-          height: 36px;
-          @extend %inputFieldSize;
 
+      & h3 {
+        padding: 15px 19px 15px 10px;
+        @extend %h3Size;
+      }
+
+      .imageForProject {
+
+        background: url('../../assets/images/GrayBackground.jpg') no-repeat;
+        background-size: 100% 700px;
+
+        .imageWrapper {
+          height: 350px;
+          max-width: 620px;
+          width: 100%;
+
+          margin: 0 auto;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: center;
+          align-content: center;
+        }
+
+        .cloud {
+          width: 200px;
+        }
+
+        .image {
+          max-height: 350px;
+          max-width: 620px;
+          width: 100%;
+          height: auto;
+        }
+
+        .slideP {
+          color: black;
+        }
+
+        .uploadButton {
+
+          width: 100%;
+          font-size: 16px;
+          cursor: pointer;
+          background: #27aae1;
+          padding: 15px 20px;
+          border: none;
+          color: #fff;
+          font-weight: 600;
+          outline: none;
+          border-radius: 4px;
+          box-shadow: 0 0 5px 0 rgba(0, 0, 0, .2);
         }
       }
-      .descriptionInputField{
 
-        .field{
-          height: 70px;
-          @extend %inputFieldSize;
+      .videoWrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+        & img {
+          padding: 20px;
+          width: 240px;
+          height: 200px;
+        }
+
+        .videoBtn {
+          width: 180px;
+          font-size: 16px;
+          cursor: pointer;
+          background: #27aae1;
+          padding: 15px 20px;
+          border: none;
+          color: #fff;
+          font-weight: 600;
+          outline: none;
+          border-radius: 4px;
+          box-shadow: 0 0 5px 0 rgba(0, 0, 0, .2);
         }
       }
     }
+
+    .budgetAndDuration {
+      @include inputBoxSize(120px);
+      margin-bottom: 11px;
+
+      .budgetAndDurationWrapper {
+        display: flex;
+        flex-direction: row;
+
+        .fieldBudget {
+          @include inputFieldSize(36px, 50%);
+        }
+
+        .inputPostfix {
+          position: relative;
+          top: 8px;
+          right: 35px;
+          color: #9b9b9b;
+          font-size: 14px;
+          font-weight: 700;
+          line-height: 1.4;
+        }
+
+        .fieldDuration {
+          margin-left: 20px;
+          @include inputFieldSize(36px, 15%);
+        }
+
+        .durationText {
+          position: relative;
+          top: 8px;
+          right: -5px;
+          color: #999999;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .buttonAndPreview {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 20px;
+    width: 300px;
+    margin-top: 11px;
+
+    .submitBtn {
+      width: 100%;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #fff;
+      background: #fb8701;
+      border: 1px solid #e37a01;
+      box-shadow: 0 0 5px 0 rgba(0, 0, 0, .2);
+      font-size: 16px;
+      padding: 0px 10px;
+      text-align: center;
+      border-radius: 2px;
+      height: 40px;
+    }
+
+    .preview {
+      margin-top: 11px;
+      width: 300px;
+      height: 410px;
+      border-top: 5px solid transparent;
+      border-radius: 5px;
+      background-color: #ffffff;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+
+      .previewImg {
+        width: 300px;
+        height: 170px;
+      }
+
+      .previewWrapper {
+        padding: 15px 19px 15px 10px;
+        display: flex;
+        flex-direction: column;
+
+        .previewDescription {
+          color: #999999;
+          word-wrap: break-word;
+          height: 80px;
+        }
+
+        .mainInfo {
+          color: #999999;
+          font-size: 12px;
+          line-height: 18px;
+        }
+
+        .progress {
+          margin-top: 20px;
+          margin-bottom: 10px;
+          width: 100%;
+          height: 4px;
+          color: #83d9e1;
+          border: none;
+          -moz-border-radius: 35px;
+          border-radius: 35px;
+          background: #cccccc;
+          vertical-align: baseline;
+        }
+
+        .moneyStatus {
+          display: flex;
+          justify-content: space-between;
+          .addition {
+            margin-top: 2px;
+            text-transform: uppercase;
+            color: #666666;
+            font-size: 11px;
+            line-height: 16px;
+          }
+          .status {
+            font-size: 14px;
+            font-weight: 600;
+          }
+          .money {
+            display: flex;
+            flex-direction: column;
+          }
+          .days{
+            display: flex;
+            flex-direction: column;
+          }
+        }
+      }
+    }
+  }
 }

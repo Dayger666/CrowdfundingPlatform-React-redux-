@@ -1,5 +1,6 @@
 .header {
-  grid-area: h; }
+  grid-area: h;
+  position: fixed; }
   .header a {
     color: #363636; }
   .header a:link {
