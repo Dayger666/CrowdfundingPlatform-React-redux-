@@ -11,7 +11,6 @@ let SignUp = (props) => {
         props.registerThunkCreator(formData.name, formData.email, formData.password);
     };
     if (props.isRegister) {
-
         props.setIsRegister(false);
         return <Redirect to={'/login'}/>
     }

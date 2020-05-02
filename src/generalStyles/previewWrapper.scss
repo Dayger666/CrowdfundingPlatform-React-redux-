@@ -1,0 +1,53 @@
+.previewWrapper {
+  padding: 15px 19px 15px 10px;
+  display: flex;
+  flex-direction: column;
+  .previewDescription {
+    color: #999999;
+    word-wrap: break-word;
+    height: 80px;
+  }
+
+  .mainInfo {
+    color: #999999;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .progress {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 4px;
+    color: #83d9e1;
+    border: none;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    background: #cccccc;
+    vertical-align: baseline;
+  }
+
+  .moneyStatus {
+    display: flex;
+    justify-content: space-between;
+    .addition {
+      margin-top: 2px;
+      text-transform: uppercase;
+      color: #666666;
+      font-size: 11px;
+      line-height: 16px;
+    }
+    .status {
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .money {
+      display: flex;
+      flex-direction: column;
+    }
+    .days{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

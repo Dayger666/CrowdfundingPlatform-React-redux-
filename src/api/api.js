@@ -37,5 +37,23 @@ export let authAPI = {
   // logOut:()=>{
   //     return instance.delete(`auth/login`);
   // }
+};
 
+export let companyAPI={
+  addCompany: (userID, name, description, category, location, images, youTubeLink, donateGoal, duration) => {
+    return instance.post(`saveCompany`, {
+      userID,
+      name,
+      description,
+      category,
+      location,
+      images,
+      youTubeLink,
+      donateGoal,
+      duration,
+    })
+  },
+  getCompanies:()=>{
+    return instance.get(`getCompanies`)
+  },
 };

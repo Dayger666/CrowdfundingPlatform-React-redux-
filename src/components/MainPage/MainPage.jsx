@@ -25,8 +25,6 @@ const MainPage = (props) => {
     <div className={classes.mainWrapper}>
       <img alt='321'src={mainBanner}/>
       <div className={classes.content}>
-
-      
       <div className={classes.category}>
         <Select
           isMulti
@@ -52,6 +50,9 @@ const MainPage = (props) => {
         />
       </div>
       </div>
+          <div className={classes.companies}>
+
+          </div>
       </div>
     </div>
     

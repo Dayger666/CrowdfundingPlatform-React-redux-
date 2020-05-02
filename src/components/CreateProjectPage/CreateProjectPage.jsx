@@ -11,7 +11,6 @@ import grayBack from '../../assets/images/GrayBackground.jpg'
 import {connect} from "react-redux";
 
 const CreateProjectPage = (props) => {
-    console.log(props.hasLocationValue);
     const [images, setImages] = useState([]);
     const [videoId, setVideoId] = useState('');
     const [show, setShow] = useState(false);
@@ -84,7 +83,7 @@ const CreateProjectPage = (props) => {
         <>
             <form className={classes.createProjectForm} onSubmit={props.handleSubmit((values) => {
                 // console.log(values);
-                props.onSubmit('adsasdasd', values);
+                props.onSubmit(images,videoId, values);
             })}>
                 <div className={classes.generalInformation}>
                     <div className={classes.nameInputField}><h3>Project name</h3>
@@ -129,7 +128,7 @@ const CreateProjectPage = (props) => {
                         <h3>Budget and duration</h3>
                         <div className={classes.budgetAndDurationWrapper}>
                             <Field className={classes.fieldBudget}
-                                   placeholder='Enter amount' name={'budget'}
+                                   placeholder='Enter amount' name={'donateGoal'}
                                    component={'input'}/>
                             <span className={classes.inputPostfix}>USD</span>
                             <Field className={classes.fieldDuration}

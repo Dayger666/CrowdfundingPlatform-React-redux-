@@ -12,7 +12,8 @@ let initialState = {
     isAuth: false,
     email: null,
     userName: null,
-    _id: null,
+    userID:null,
+    _idBD: null,
 };
 const authReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -36,13 +37,14 @@ const authReducer = (state = initialState, action) => {
     }
 
 };
-export let setUserData = (email, userName, id) => {
+export let setUserData = (email, userName,userID,_idBD) => {
     return {
         type: SET_USER_DATA,
         data: {
             email,
             userName,
-            id,
+            userID,
+            _idBD,
         }
     }
 };
@@ -63,27 +65,19 @@ export let setIsAuth = (isAuth) => {
     }
 };
 
-export let setUserDataThunkCreator = () => {
-    return (dispatch) => {
-        return authAPI.authMe().then((res) => {
-            if (res.resultCode === 0) {
-                dispatch(setUserData(res.data.id, res.data.email, res.data.login, true));
-            }
-        })
-    }
-};
 export let registerThunkCreator = (username, email, password) => {
     return (dispatch) => {
         authAPI.register(username, email, password).then((res) => {
-            dispatch(setUserData(true));
+            dispatch(setIsRegister(true));
         })
     }
 };
 export let loginThunkCreator = (email, password) => {
     return (dispatch) => {
         authAPI.login(email, password).then((res) => {
+            console.log(res);
             dispatch(setIsAuth(true));
-            dispatch(setUserData(res.data.email, res.data.userName, res.data.userId));
+            dispatch(setUserData(res.data.user.userEmail, res.data.user.userName,res.data.user.userID, res.data.user._idBD));
             localStorage.setItem("token", res.data.token);
         })
     }
@@ -91,7 +85,7 @@ export let loginThunkCreator = (email, password) => {
 export let logOutThunkCreator = () => {
     return (dispatch) => {
         localStorage.removeItem("token");
-        dispatch(setUserData(null, null, null));
+        dispatch(setUserData(null, null, null,null));
         dispatch(setIsAuth(false));
 
     }
@@ -102,20 +96,19 @@ const getUserPayload = () => {
         let userPayload = atob(token.split('.')[1]);
         return JSON.parse(userPayload);
     } else return null;
-}
+};
 const isLoggedIn = () => {
     let userPayload = getUserPayload();
     if (userPayload)
         return userPayload.exp > Date.now() / 1000;
     else return false;
-}
+};
 export let initializeApp = () => {
     return (dispatch) => {
-
         if (isLoggedIn) {
             authAPI.authMe().then((res) => {
                 dispatch(setIsAuth(true));
-                dispatch(setUserData(res.data.user.userEmail, res.data.user.userName, res.data.user.userId));
+                dispatch(setUserData(res.data.user.userEmail, res.data.user.userName,res.data.user.userID, res.data.user._idBD));
             })
         }
     }
@@ -123,7 +116,7 @@ export let initializeApp = () => {
 export let oauthGoogleThunkCreator = (accessToken) => {
     return (dispatch) => {
         authAPI.googleOauth(accessToken).then((res) => {
-
+console.log(res);
             dispatch(setIsAuth(true));
             dispatch(setUserData(res.data.email, res.data.userName, res.data.userId));
             localStorage.setItem("token", res.data.token);
