@@ -40,9 +40,10 @@ export let authAPI = {
 };
 
 export let companyAPI={
-  addCompany: (userID, name, description, category, location, images, youTubeLink, donateGoal, duration) => {
+  addCompany: (userID,userName, name, description, category, location, images, youTubeLink, donateGoal, duration) => {
     return instance.post(`saveCompany`, {
       userID,
+      userName,
       name,
       description,
       category,
@@ -55,5 +56,38 @@ export let companyAPI={
   },
   getCompanies:()=>{
     return instance.get(`getCompanies`)
+  },
+  getCompanyProfile:(companyID)=>{
+    return instance.get(`getCompanyDetails/${companyID}`);
+  },
+  saveRating:(companyID,userID,rating)=>{
+    return instance.put(`saveRating`, {
+      companyID,userID,rating
+    })
+  },
+  donate:(projectID,currentSum)=>{
+    return instance.put(`donate`, {
+      projectID,currentSum
+    })
+  },
+  saveComment:(projectID,userID,img,userName,commentText)=>{
+    return instance.put(`saveComment`, {
+      projectID,userID,img,userName,commentText,
+    })
+  },
+  getProjectByCategory:(projectCategory)=>{
+    return instance.post('getCompanyByCategory',{
+      projectCategory,
+    })
+  },
+  getProjectsByUserId:(userID)=>{
+    return instance.post('getCompaniesBuUserId',{
+      userID,
+    })
+  },
+  removeProjectById:(projectID)=>{
+    return instance.post('removeProjectById',{
+      projectID,
+    })
   },
 };

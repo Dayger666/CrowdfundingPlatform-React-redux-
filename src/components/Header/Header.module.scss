@@ -1,6 +1,5 @@
 .header {
     grid-area: h;
-    position: fixed;
     //  background: url(../../assets/images/crowdfundingBanner6.png) no-repeat;
     //  background-size:100% 670px;
     a{
@@ -15,7 +14,6 @@
         border-bottom: 1px solid #b1b1b1;
         opacity: 1;
         width:100%;
-        position: fixed;
         display: flex;
         align-items: center;
         justify-content: flex-start;

@@ -27,7 +27,7 @@ const Header = (props) => {
                                                                           src={userIcon}
                                                                           alt="user pic"
                                         /></span>}>
-                            <Dropdown.Item as="button">My profile</Dropdown.Item>
+                            <NavLink to={'/userProfile'}><Dropdown.Item as="button">My profile</Dropdown.Item></NavLink>
                             <Dropdown.Divider/>
                             <Dropdown.Item as="button" onClick={() => {
                                 props.logOut()

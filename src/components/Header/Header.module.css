@@ -1,6 +1,5 @@
 .header {
-  grid-area: h;
-  position: fixed; }
+  grid-area: h; }
   .header a {
     color: #363636; }
   .header a:link {
@@ -10,7 +9,6 @@
     border-bottom: 1px solid #b1b1b1;
     opacity: 1;
     width: 100%;
-    position: fixed;
     display: flex;
     align-items: center;
     justify-content: flex-start;

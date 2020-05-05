@@ -1,0 +1,41 @@
+.item{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 40px;
+  & img{
+    width: 56px;
+    height: 56px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+
+  }
+  .authorAvatar{
+    border-color:#27aae1;
+  }
+  strong{
+    color: #333333;
+    margin-bottom: 7px;
+    vertical-align: top;
+  }
+  .commentContent{
+    padding-left: 20px;
+    .info{
+      .commentInfo{
+        text-transform: uppercase;
+        color: #27aae1;
+        font-size: 14px;
+      }
+      .commentDate{
+        text-transform: uppercase;
+        color: #666666;
+        font-size: 14px;
+      }
+      }
+    }
+    .commentTxt{
+      margin: 10px 0;
+      color: #666666;
+      font-size: 18px;
+      line-height: 20px;
+    }
+  }

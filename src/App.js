@@ -10,6 +10,8 @@ import {compose} from "redux";
 import {connect} from "react-redux";
 import  {  useEffect } from 'react';
 import {  initializeApp } from "././redux/Auth-reducer";
+import ProjectProfileContainer from "./components/Profiles/ProjectProfile/ProjectProfileContainer";
+import UserProfileContainer from "./components/Profiles/UserProfile/UserProfile.Container";
 
 let App=(props)=>{
 
@@ -22,10 +24,12 @@ let App=(props)=>{
       
       <HeaderContainer/>
       <div className={classes.content}>
+        <Route path='/project/:projectID?' render={() => <ProjectProfileContainer/>}/>
         <Route path='/projects' render={()=><MainPageContainer/>}/>
         <Route path='/createProject' render={()=><CreateProjectPageContainer/>}/>
         <Route path='/signup' render={() => <SignUpContainer/>}/>
         <Route path='/login' render={() => <LoginContainer/>}/>
+        <Route path='/userProfile' render={() => <UserProfileContainer/>}/>
       </div>
     </div>
   );

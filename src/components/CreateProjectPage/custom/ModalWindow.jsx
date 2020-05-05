@@ -11,9 +11,6 @@ let ModalWindowReduxForm = (props) => {
 
         setVideoId(event.target.value);
     };
-    const _onReady = (event) => {
-        event.target.pauseVideo();
-    };
 //Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://www.youtube.com') does not match the recipient window's origin ('http://localhost:4200').
 
     return (

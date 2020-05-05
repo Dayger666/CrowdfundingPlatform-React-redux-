@@ -1,0 +1,11 @@
+.form-control {
+ &.error input {
+    border: 4px solid red;
+  }
+}
+.error input{
+  border: red solid 4px;
+}
+.errorMsg{
+  color:red;
+}

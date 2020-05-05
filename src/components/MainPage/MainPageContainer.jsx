@@ -1,20 +1,26 @@
 import React, {useEffect, useState} from 'react';
 import MainPage from './MainPage'
 import {connect} from "react-redux";
-import {addingCompanyThunkCreator, getCompaniesThunkCreator, setImagesUrls} from "../../redux/CompanyInfo-reducer";
+import {
+    getProjectsByCategoryThunkCreator,
+    getProjectsThunkCreator,
+} from "../../redux/ProjectInfo-reducer";
 
 let MainPageContainer = (props) => {
     useEffect(() => {
-        props.getCompaniesThunkCreator();
+        props.getProjectsThunkCreator();
     }, []);
-console.log(props.companies);
-    return <MainPage />
+    let getByCategory=(values)=>{
+        console.log(values);
+        props.getProjectsByCategoryThunkCreator(values);
+    };
+    return <MainPage projects={props.projects} getByCategory={getByCategory} getProjectsThunkCreator={props.getProjectsThunkCreator}/>
 };
 
 
 let mapStateToProps = (state) => {
     return {
-        companies: state.companyInfo.companies,
+        projects: state.projectInfo.projects,
     }
 };
-export default connect(mapStateToProps, {getCompaniesThunkCreator})(MainPageContainer);
+export default connect(mapStateToProps, {getProjectsThunkCreator,getProjectsByCategoryThunkCreator})(MainPageContainer);

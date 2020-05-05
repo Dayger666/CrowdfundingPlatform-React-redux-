@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import classes from './CreateProjectPage.module.css';
 import {Field, formValueSelector, reduxForm} from "redux-form";
 import {ReduxFormSelect} from "./custom/ReduxFormSelect ";
@@ -9,11 +9,21 @@ import youtube from '../../assets/images/youtube.png'
 import ModalWindowReduxForm from "./custom/ModalWindow";
 import grayBack from '../../assets/images/GrayBackground.jpg'
 import {connect} from "react-redux";
+import {
+    isPositiveNumber,
+    maxLengthCreator,
+    maxLengthCreator180,
+    maxLengthCreator20,
+    requiredField
+} from "../../utils/validators/validators";
+import {Textarea} from "../../common/FormsControls/Fortms.controls";
+import TextField from "@material-ui/core/TextField";
 
 const CreateProjectPage = (props) => {
     const [images, setImages] = useState([]);
     const [videoId, setVideoId] = useState('');
     const [show, setShow] = useState(false);
+
 
     const handleClose = (value = '') => {
         setVideoId(value);
@@ -82,21 +92,25 @@ const CreateProjectPage = (props) => {
     return (
         <>
             <form className={classes.createProjectForm} onSubmit={props.handleSubmit((values) => {
-                // console.log(values);
+                console.log(images);
+                props.reset();
                 props.onSubmit(images,videoId, values);
             })}>
                 <div className={classes.generalInformation}>
                     <div className={classes.nameInputField}><h3>Project name</h3>
                         <Field className={classes.field}
                                placeholder='Enter the project name' name={'name'}
-                               component={'input'}/></div>
+                               component={Textarea}
+                               validate={[requiredField,maxLengthCreator20]}
+                        /></div>
                     <div className={classes.descriptionInputField}><h3>Project description</h3>
                         <Field className={classes.field}
                                placeholder='Add a description of your project' name={'description'}
-                               component={'input'}/></div>
+                               component={'input'}
+                               validate={[requiredField,maxLengthCreator180]}/></div>
                     <div className={classes.categoryField}><h3>Project category</h3>
                         <Field className={classes.field} name="category"
-                               component={ReduxFormSelect} options={categoryOptions}>
+                               component={ReduxFormSelect} options={categoryOptions} validate={[requiredField]}>
                         </Field></div>
                     <div className={classes.locationInputField}><h3>Project location</h3>
                         <Field className={classes.field}
@@ -129,11 +143,12 @@ const CreateProjectPage = (props) => {
                         <div className={classes.budgetAndDurationWrapper}>
                             <Field className={classes.fieldBudget}
                                    placeholder='Enter amount' name={'donateGoal'}
-                                   component={'input'}/>
+                                   component={'input'}  type="number" validate={[requiredField,maxLengthCreator20,isPositiveNumber]}/>
                             <span className={classes.inputPostfix}>USD</span>
                             <Field className={classes.fieldDuration}
                                    placeholder='Days' name={'duration'}
-                                   component={'input'}/>
+                                   component={'input'}
+                                   type="number" validate={[requiredField,maxLengthCreator20,isPositiveNumber]}/>
                             <span className={classes.durationText}>From 1 to 180 days</span>
                         </div>
                     </div>
@@ -192,5 +207,5 @@ let CreateProjectReduxFormWithSelectors = connect(state => {
         hasLocationValue,
         hasDaysValue,
     }
-})(CreateProjectReduxForm)
+})(CreateProjectReduxForm);
 export default CreateProjectReduxFormWithSelectors;

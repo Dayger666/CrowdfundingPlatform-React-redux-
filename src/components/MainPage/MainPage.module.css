@@ -1,45 +1,3 @@
-.previewWrapper {
-  padding: 15px 19px 15px 10px;
-  display: flex;
-  flex-direction: column; }
-  .previewWrapper .previewDescription {
-    color: #999999;
-    word-wrap: break-word;
-    height: 80px; }
-  .previewWrapper .mainInfo {
-    color: #999999;
-    font-size: 12px;
-    line-height: 18px; }
-  .previewWrapper .progress {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    width: 100%;
-    height: 4px;
-    color: #83d9e1;
-    border: none;
-    -moz-border-radius: 35px;
-    border-radius: 35px;
-    background: #cccccc;
-    vertical-align: baseline; }
-  .previewWrapper .moneyStatus {
-    display: flex;
-    justify-content: space-between; }
-    .previewWrapper .moneyStatus .addition {
-      margin-top: 2px;
-      text-transform: uppercase;
-      color: #666666;
-      font-size: 11px;
-      line-height: 16px; }
-    .previewWrapper .moneyStatus .status {
-      font-size: 14px;
-      font-weight: 600; }
-    .previewWrapper .moneyStatus .money {
-      display: flex;
-      flex-direction: column; }
-    .previewWrapper .moneyStatus .days {
-      display: flex;
-      flex-direction: column; }
-
 .mainWrapper {
   display: flex;
   flex-direction: column;
@@ -81,6 +39,8 @@
     .mainWrapper .content .companies {
       display: flex;
       flex-direction: row;
-      justify-content: center; }
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 1300px; }
 
 /*# sourceMappingURL=MainPage.module.css.map */
