@@ -18,6 +18,7 @@ const ProjectProfile = (props) => {
     const getRating = () => {
         for (let i = rating.length - 1; i >= 0; i--) {
             if (+rating[i].idUser === props.userID) {
+
                 return rating[i].personalRating
             }
         }
